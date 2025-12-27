@@ -82,8 +82,6 @@ Run the following commands in separate terminals:
 
 ## 🎬 Demo
 
-*(Recommend: Add a GIF here of your optimized LinkedIn video)*
-
 > **Note**: For a full video demonstration including the code and real-time logs, [visit my LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7409211400666910720/).
 
 ---
