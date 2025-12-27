@@ -1,88 +1,93 @@
-# ROS2 Red Object Tracker 🟥🐢
+**Vision-Based Autonomous Navigation | ROS2 & OpenCV 🟥🐢
+**This project implements a modular, real-time autonomous navigation pipeline for a Turtlesim robot using ROS2 and Computer Vision. The system processes live webcam frames to detect specific visual cues (red objects) and translates them into movement commands while maintaining safety through collision avoidance logic.
 
-This ROS2 package uses image processing to detect a red object in real-time from a webcam feed, and control a Turtlesim robot accordingly.
+**🏗️ System Architecture
+**The system is designed with a decentralized approach, utilizing the Publisher/Subscriber pattern to ensure modularity and scalability.
 
-## 📦 Package Name
+Image Detection Node (image_detection.py):
 
-`ros2_opencv`
+Captures live video frames and converts them to the HSV color space for robust color segmentation.
 
-## 🧠 What It Does
+Applies binary masking and contour analysis to isolate the target object.
 
-- 📷 Captures webcam video stream.
-- 🧠 Detects red-colored objects using OpenCV (HSV masking + contour analysis).
-- 🐢 Sends control commands to the Turtlesim robot:
-  - **Forward** if red object is centered
-  - **Turn left/right** if object is left/right in frame
-  - **Stop** if object not detected
+Calculates the object's centroid and publishes directional commands (left, right, center, none) to a dedicated topic.
 
-## 🗂️ Package Structure
+Robot Control Node (robot_control.py):
 
-ros2_opencv/
-├── ros2_opencv/
-│ ├── image_detection.py # Image processing & detection
-│ ├── robot_control.py # Subscribes to detection & sends turtle commands
-│ ├── cameraPublisher.py # (Optional) Test webcam feed publisher
-│ ├── subscriberImage.py # (Optional) Test image subscriber node
-│ └── init.py
-├── package.xml
-├── setup.py
-├── setup.cfg
-└── resource/
-└── ros2_opencv
+Subscribes to directional commands and the robot’s real-time pose (/turtle1/pose).
+
+Translates high-level directions into precise Twist messages (linear and angular velocity).
 
 
-## 🔧 Dependencies
 
-Make sure you have these installed in your ROS 2 environment:
+Wall Avoidance Logic: Implements proximity monitoring to prevent collisions with the environment boundaries, ensuring system robustness.
 
-- `rclpy`
-- `sensor_msgs`
-- `geometry_msgs`
-- `OpenCV`
-- `cv_bridge`
-- `turtlesim`
 
-## 🚀 How to Run
+🧠 Key Technical Features
 
-**1. Build the package:**
+Real-Time Processing: Optimized OpenCV pipeline for low-latency object tracking.
 
-```bash
-cd ~/ws_ros2_opencv
-colcon build
+
+
+HSV Color Masking: Superior noise rejection compared to RGB-based detection.
+
+
+Modular Node Design: Separation of concerns allows for easy debugging and potential integration with physical hardware.
+
+
+Edge Case Handling: Integrated safety logic for boundary management.
+
+📦 Installation & Setup
+Prerequisites
+ROS2 (Humble/Foxy)
+
+Python 3.10+
+
+OpenCV (opencv-python)
+
+cv_bridge
+
+Build
+Bash
+
+# Create and build the workspace
+mkdir -p ~/ws_ros2/src
+cd ~/ws_ros2/src
+git clone https://github.com/RoiAviram/ros2-red-object-tracker.git
+cd ..
+colcon build --packages-select ros2_opencv
 source install/setup.bash
+🚀 Execution
+Run the following commands in separate terminals:
 
-**2. Launch the nodes manually:**
+Launch Turtlesim Environment: ros2 run turtlesim turtlesim_node
 
-**In separate terminals:**
+Start Image Processing Node: ros2 run ros2_opencv image_detection
 
-# Terminal 1 - Turtlesim
-ros2 run turtlesim turtlesim_node
+Start Movement Control Node: ros2 run ros2_opencv robot_control
 
-# Terminal 2 - Robot control node
-ros2 run ros2_opencv robot_control
+🎬 Demo
+(Recommend: Add a GIF here of your optimized LinkedIn video)
 
-# Terminal 3 - Image detection node
-ros2 run ros2_opencv image_detection
+Note: For a full video demonstration including the code and real-time logs, visit my LinkedIn post.
+
+🛠️ Skills Demonstrated
+
+Robotics: ROS2 Humble, Multi-node communication, Topic management.
 
 
-🖼️ Output Example
 
-    🟥 Red object highlighted with bounding box
 
-    🐢 Robot reacts based on object position
+Computer Vision: OpenCV, HSV Segmentation, Contour Analysis.
 
-    Status messages logged (e.g., Turning left, Moving forward)
 
-📌 Notes
 
-    Detection is based on red HSV thresholds — tune them in image_detection.py if needed.
+Software Engineering: Python, Linux (Ubuntu), Git, Modular System Design.
 
-    Works best with plain background and proper lighting.
 
-    Intended as demonstration project for ROS2 + computer vision.
+👨‍💻 Author
 
-🤖 Author
+Roi Aviram Electrical and Computer Engineering Student @ Ben-Gurion University.
 
-Roi Aviram | Electrical and Computer Engineering Student
-🔗 github.com/RoiAviram
 
+Former Algorithm Data Analyst & Automation Engineer (Units 9900, 8200).
