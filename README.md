@@ -84,7 +84,7 @@ Run the following commands in separate terminals:
 
 *(Recommend: Add a GIF here of your optimized LinkedIn video)*
 
-> **Note**: For a full video demonstration including the code and real-time logs, [visit my LinkedIn post](https://www.google.com/search?q=https://www.linkedin.com/posts/roi-aviram_ros2-computervision-robotics-activity-7276941198463299584-p4mU%3Futm_source%3Dshare%26utm_medium%3Dmember_desktop).
+> **Note**: For a full video demonstration including the code and real-time logs, [visit my LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7409211400666910720/).
 
 ---
 
