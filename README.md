@@ -26,8 +26,7 @@ The system is designed with a decentralized approach, utilizing the **Publisher/
 * Translates high-level directions into precise `Twist` messages (linear and angular velocity).
 
 
-* 
-**Wall Avoidance Logic**: Implements proximity monitoring to prevent collisions with the environment boundaries, ensuring system robustness.
+* **Wall Avoidance Logic**: Implements proximity monitoring to prevent collisions with the environment boundaries, ensuring system robustness.
 
 
 
@@ -35,20 +34,16 @@ The system is designed with a decentralized approach, utilizing the **Publisher/
 
 ## 🧠 Key Technical Features
 
-* 
-**Real-Time Processing**: Optimized OpenCV pipeline for low-latency object tracking.
+* **Real-Time Processing**: Optimized OpenCV pipeline for low-latency object tracking.
 
 
-* 
-**HSV Color Masking**: Superior noise rejection compared to RGB-based detection.
+* **HSV Color Masking**: Superior noise rejection compared to RGB-based detection.
 
 
-* 
-**Modular Node Design**: Separation of concerns allows for easy debugging and potential integration with physical hardware.
+* **Modular Node Design**: Separation of concerns allows for easy debugging and potential integration with physical hardware.
 
 
-* 
-**Edge Case Handling**: Integrated safety logic for boundary management.
+* **Edge Case Handling**: Integrated safety logic for boundary management.
 
 
 
@@ -95,16 +90,13 @@ Run the following commands in separate terminals:
 
 ## 🛠️ Skills Demonstrated
 
-* 
-**Robotics**: ROS2 Humble, Multi-node communication, Topic management.
+* **Robotics**: ROS2 Humble, Multi-node communication, Topic management.
 
 
-* 
-**Computer Vision**: OpenCV, HSV Segmentation, Contour Analysis.
+* **Computer Vision**: OpenCV, HSV Segmentation, Contour Analysis.
 
 
-* 
-**Software Engineering**: Python, Linux (Ubuntu), Git, Modular System Design.
+* **Software Engineering**: Python, Linux (Ubuntu), Git, Modular System Design.
 
 
 
