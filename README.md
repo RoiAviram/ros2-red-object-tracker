@@ -105,6 +105,5 @@ Run the following commands in separate terminals:
 
 **Roi Aviram** Electrical and Computer Engineering Student @ Ben-Gurion University.
 
-*Former Algorithm Data Analyst & Automation Engineer (Units 9900, 8200)*.
 
 ---
