@@ -3,6 +3,10 @@
 
 This project implements a modular, real-time autonomous navigation pipeline for a Turtlesim robot using **ROS2** and **Computer Vision**. The system processes live webcam frames to detect specific visual cues (red objects) and translates them into movement commands while maintaining safety through collision avoidance logic.
 
+## 🎬 Demo
+
+> **Note**: For a full video demonstration including the code and real-time logs, [visit my LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7409211400666910720/).
+
 ## 🏗️ System Architecture
 
 The system is designed with a decentralized approach, utilizing the **Publisher/Subscriber** pattern to ensure modularity and scalability.
@@ -80,9 +84,6 @@ Run the following commands in separate terminals:
 3. **Start Movement Control Node**:
 `ros2 run ros2_opencv robot_control`
 
-## 🎬 Demo
-
-> **Note**: For a full video demonstration including the code and real-time logs, [visit my LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7409211400666910720/).
 
 ---
 
